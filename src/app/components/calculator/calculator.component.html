@@ -3,7 +3,7 @@
     <div class="numbers">
       <app-number-button *ngFor="let number of numbers" [number]="number" (buttonClick)="handleButtonClick($event)"></app-number-button>
       <app-operator-button *ngFor="let operator of operators" [operator]="operator" (buttonClick)="handleButtonClick($event)"></app-operator-button>
-      <app-operator-button operator="=" (buttonClick)="handleButtonClick($event)"></app-operator-button>
+      <app-operator-button operator="=" (buttonClick)="exerciseExecute($event)"></app-operator-button>
       <app-operator-button operator="AC" (buttonClick)="resetExercise()"></app-operator-button>
     </div>
   </div>

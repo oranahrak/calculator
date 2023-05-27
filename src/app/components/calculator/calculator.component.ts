@@ -12,18 +12,19 @@ export class CalculatorComponent {
 
   //control the clicked button
   handleButtonClick(value: string) {
-    if (value === '=') {
-      // Check the exercise valid
-      try {
-        this.mathExercise = eval(this.mathExercise).toString();
-      }
-      catch (error) {
-        this.mathExercise = 'Error';
-      }
-    }
-    else {
       // Append the clicked value to the math exercise
       this.mathExercise += value;
+  }
+
+  exerciseExecute(value: string){
+    // Check the exercise valid
+    const result = eval(this.mathExercise);
+    if (Number.isFinite(result)) {
+      this.mathExercise = result.toString();
+    }
+    else {
+      this.mathExercise = 'Error';
+      console.log('Error occurred during evaluation:', result);
     }
   }
   
