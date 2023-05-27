@@ -10,6 +10,7 @@ export class CalculatorComponent {
   operators: string[] = ['*', '/', '+', '-'];
   mathExercise: string = '';
 
+  //control the clicked button
   handleButtonClick(value: string) {
     if (value === '=') {
       // Check the exercise valid
